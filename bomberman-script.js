@@ -1,4 +1,4 @@
-const bombArray = ['11','22','33','54','25','76','32','45','43','37']
+let bombArray;
 let score  = 0
 const redselect = 'redselect'
 const greenselect = 'greenselect'
@@ -12,6 +12,9 @@ startGame()
 restartButton.addEventListener('click',startGame);
 function startGame(){
     score = 0
+    bombArray = []
+    createArray()
+    console.log(bombArray)
     cellElements.forEach(cell =>{
         cell.classList.remove(redselect,greenselect,"disabled");
         cell.removeEventListener('click',toClickClass)
@@ -26,7 +29,7 @@ function toClickClass(e){
     let fail = false
     bombArray.forEach(curr =>{
         //console.log(curr,cell.id)
-        if (curr === cell.id){
+        if (curr == cell.id){
             fail = true;
         }
     })
@@ -116,11 +119,22 @@ function displayBombs(){
                 
             },1500)
 
-    })
-    
-    
-    
-    
+    })   
+}
+function createArray(){
+    bombArray.push(Math.ceil(Math.random()*81))
+    for(let i=0;i<9;i++){
+            let random = Math.ceil(Math.random()*81)
+            for(let j=0;j<bombArray.length;i++){
+                if (random !== bombArray[j]){
+                    bombArray.push(random)
+                    break
+                }
+                else{
+                    continue;
+                }
+            }
+    }
 }
 function hideBombs(){
     bombArray.forEach(cell=>{
