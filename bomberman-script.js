@@ -119,7 +119,7 @@ function displayBombs(){
                 document.getElementById(cell).classList.remove(redselect);
                 console.log(document.getElementById(cell))
                 
-            },1500)
+            },2500)
 
     })   
 }
