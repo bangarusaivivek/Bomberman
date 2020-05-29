@@ -59,9 +59,11 @@ function checkClass(cell,fail){
         
     }
     else{
-        document.getElementById('emoji').classList.add('show')
+        let r = Math.ceil(Math.random()*5)
+        document.getElementById('emoji'+r).classList.add('show')
+        console.log(document.getElementById('emoji'+r))
         setTimeout(function(){
-            document.getElementById('emoji').classList.remove('show')
+            document.getElementById('emoji'+r).classList.remove('show')
         },500)
         cell.classList.add(greenselect)
         score++;
