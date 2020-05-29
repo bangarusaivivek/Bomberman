@@ -85,7 +85,7 @@ function winningText(score){
     }
     else{
         scoreElement.innerHTML = `score : ${score}`
-        winningMessageDisplay.innerHTML = 'Best of luck'
+        winningMessageDisplay.innerHTML = 'Better Luck next Time'
         //console.log("2")
 
         
